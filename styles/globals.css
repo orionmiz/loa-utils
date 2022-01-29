@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: AppleSDGothicNeo, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: AppleSDGothicNeo;
+  src: url('/fonts/AppleSDGothicNeo/AppleSDGothicNeoM.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
