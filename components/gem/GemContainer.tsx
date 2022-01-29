@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import useGem from "../../hooks/useGem";
-import { GemLists } from "../../lib/gem";
+import { GemLists, presets } from "../../lib/gem";
 import GemList from "./GemList";
 
 function GemContainer({ name, desc }: {
@@ -32,14 +32,14 @@ function GemContainer({ name, desc }: {
   }
 
   return (
-    <>
-      <div className="mb-1">
-        <span className="font-bold text-sky-700">{desc} {' '}</span>
-        <span className="border rounded bg-gray-300 font-bold px-1 pt-1" onClick={() => gem.clear(name)}>초기화</span>
+    <div className="container w-56">
+      <div className="flex mb-1 items-center space-x-3">
+        <span className="flex-none font-bold text-sky-700 text-xl">{desc} {' '}</span>
+        <span className="flex-none border rounded bg-gray-400 text-white font-bold cursor-pointer px-2 select-none" onClick={() => gem.clear(name)}>⭯</span>
       </div>
       <GemList gems={list} name={name} />
       <form onSubmit={onSubmit} name={name}>
-        <input type='text' className="border rounded px-1" placeholder="예시) 5, 6/2, 7*"
+        <input type='text' className="border rounded px-1 w-full" placeholder={`예시) 5, 6/2, 7*${name === 'now' ? `, ${Object.keys(presets).join(', ')}` : ''}`}
           name={name}
           onChange={handleChange}
           value={inputs[name]}></input>
@@ -49,7 +49,7 @@ function GemContainer({ name, desc }: {
             }
             `}</style>
       </form>
-    </>
+    </div>
   );
 }
 

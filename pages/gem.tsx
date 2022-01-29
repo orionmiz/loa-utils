@@ -15,38 +15,45 @@ function GemPage() {
 
   const { lists, result, needs, rests } = gem;
 
-  // parse string and cache preview data
-  const cache = useMemo(() => {
+  // TODO: copy to clipboard
+  /*const copy = () => {
 
-  }, []);
+  }*/
 
   return (
     <Layout>
       <Head>
         <title>LoaUtils - 보석 계산</title>
       </Head>
-      <div className="p-4">
-        <div className="font-bold">가이드) </div>
-        보유 중인 보석과 목표 보석을 <span className="border rounded font-bold text-green-500 border-green-500 px-1 pt-1">
-          레벨/개수
-        </span>와 같은 형태로 입력합니다.
-        <div>
-          Enter를 누르면 입력을 확정하여 리스트에 반영합니다.<br />
-          레벨만 입력할 경우 개수는 1로 취급합니다.<br />
-          레벨 뒤에 *를 붙일 경우 개수는 11로 취급합니다. (최대 장착 보석)<br />
-          쉼표로 구분하여 여러 개의 보석을 한번에 입력 가능합니다.<br />
-        </div>
+      <div className="m-4">
+        <div className="font-bold text-xl mb-1 text-sky-700">가이드</div>
+
+        <p>
+          <ol className="list-decimal list-inside">
+            <li>보유 중인 보석과 목표 보석을 <span className="border rounded font-bold text-green-500 border-green-500 px-1">
+              레벨/개수
+            </span> 와 같은 형태로 입력합니다.</li>
+            <li>쉼표로 구분하여 여러 개의 보석을 한번에 입력 가능합니다.</li>
+            <li>Enter를 누르면 입력을 확정하여 리스트에 반영합니다.</li>
+          </ol>
+          ※ 레벨만 입력할 경우 개수는 1로 취급합니다.<br />
+          ※ 레벨 뒤에 *를 붙일 경우 개수는 11로 취급합니다. (최대 장착 보석)<br />
+        </p>
         <br />
-        <div>
-          보석 레벨 대신 다음과 같은 단어들도 사용 가능합니다.
-          {Object.keys(presets).map(key => (
-            <div key={key}>
-              <span className="font-bold">{key}:</span>{' '}
-              { Object.keys(presets[key]).map(level => (
-                `${level}레벨 보석 ${presets[key][parseInt(level)]}개`
-              )).join(', ') }로 취급
-            </div>))}
-        </div>
+        <p>
+          <span className="font-bold">
+            보석 레벨 대신 다음과 같은 단어들도 사용 가능합니다.
+          </span>
+          <ul className="list-disc list-inside">
+            {Object.keys(presets).map(key => (
+              <li key={key}>
+                <span className="font-bold">{key}:</span>{' '}
+                {Object.keys(presets[key]).map(level => (
+                  `${level}레벨 보석 ${presets[key][parseInt(level)]}개`
+                )).join(', ')}로 취급
+              </li>))}
+          </ul>
+        </p>
       </div>
       <div className="flex flex-wrap">
         {
@@ -59,17 +66,20 @@ function GemPage() {
             </div>))
         }
         <div className="flex-none p-4">
-          <div className="font-bold text-sky-700 mb-1">결과</div>
+          <div className="mb-1">
+            <span className="font-bold text-sky-700 text-xl pr-1">➥ 결과 </span>
+            {/*<span className="border rounded bg-gray-300 font-bold px-1 cursor-pointer select-none" onClick={() => { }}>복사</span>*/}
+          </div>
           <div className="mb-1 border rounded px-1 flex flex-wrap">
             {(!isEmpty(lists.now) && isEmpty(lists.target)) &&
               <div className="flex-none p-4">
-                <div className="bg-slate-600 pt-1 mb-2 rounded font-bold text-white text-center">합성 결과</div>
+                <div className="bg-slate-600 mb-2 rounded font-bold text-white text-center">합성 결과</div>
                 <GemList gems={result} />
                 <br />
               </div>}
             {!isEmpty(needs) &&
               <div className="flex-none p-4">
-                <div className="bg-slate-600 pt-1 mb-2 rounded font-bold text-white text-center">필요 보석</div>
+                <div className="bg-slate-600 mb-2 rounded font-bold text-white text-center">필요 보석</div>
                 <GemList gems={needs} />
                 <div className="text-rose-400 font-bold">≈ 태양의 회랑 {calcBossRushReq(needs)}수</div>
                 <div className="text-rose-400 font-bold">≈ 점령전 {calcWarReq(needs)}회</div>
@@ -77,7 +87,7 @@ function GemPage() {
               </div>}
             {(!isEmpty(lists.target) && !isEmpty(rests)) &&
               <div className="flex-none p-4">
-                <div className="bg-slate-200 pt-1 mb-2 rounded font-bold text-center">남는 보석</div>
+                <div className="bg-slate-200 mb-2 rounded font-bold text-center">남는 보석</div>
                 <GemList gems={rests} />
               </div>}
           </div>

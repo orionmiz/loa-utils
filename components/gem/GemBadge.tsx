@@ -31,7 +31,7 @@ function GemBadge({ level, amount, name }: {
 
   return (
     <>
-      <div className="mb-1" onMouseOver={() => setShowCounter(true)} onMouseLeave={() => setShowCounter(false)}>
+      <div className="flex items-center mb-1" onMouseOver={() => setShowCounter(true)} onMouseLeave={() => setShowCounter(false)}>
         <Badge label={`${level}레벨 보석 / ${arr.join('+')}개`} color={GemColor[level]} />
         {(name && showCounter && amount) &&
           <Counter
