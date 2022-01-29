@@ -9,7 +9,7 @@ export default function Layout({
     <>
       <div className='container mx-auto px-8 shadow-lg flex items-stretch'>
         <Link href='/'>
-          <a className='text-lg font-semibold px-4 flex items-center mt-1'>
+          <a className='text-lg font-semibold px-4 flex items-center'>
             LoaUtils
           </a>
         </Link>
@@ -18,7 +18,7 @@ export default function Layout({
           ['카드 계산', '/card'],
         ].map(([title, url], idx) => (
           <Link href={url} key={idx}>
-            <a className='px-4 hover:text-sky-700 hover:bg-gray-100 py-4 mt-1'>{title}</a>
+            <a className='px-4 hover:text-sky-700 hover:bg-gray-100 py-4'>{title}</a>
           </Link>
         ))}
       </div>
