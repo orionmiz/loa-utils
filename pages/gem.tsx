@@ -70,7 +70,7 @@ function GemPage() {
             <span className="font-bold text-sky-700 text-xl pr-1">➥ 결과 </span>
             {/*<span className="border rounded bg-gray-300 font-bold px-1 cursor-pointer select-none" onClick={() => { }}>복사</span>*/}
           </div>
-          <div className="mb-1 border rounded px-1 flex flex-wrap">
+          <div className="mb-1 border rounded px-1 flex flex-wrap ">
             {(!isEmpty(lists.now) && isEmpty(lists.target)) &&
               <div className="flex-none p-4">
                 <div className="bg-slate-600 mb-2 rounded font-bold text-white text-center">합성 결과</div>
@@ -78,7 +78,7 @@ function GemPage() {
                 <br />
               </div>}
             {!isEmpty(needs) &&
-              <div className="flex-none p-4">
+              <div className="flex-none p-1 sm:p-4">
                 <div className="bg-slate-600 mb-2 rounded font-bold text-white text-center">필요 보석</div>
                 <GemList gems={needs} />
                 <div className="text-rose-400 font-bold">≈ 태양의 회랑 {calcBossRushReq(needs)}수</div>
@@ -86,7 +86,7 @@ function GemPage() {
                 <br />
               </div>}
             {(!isEmpty(lists.target) && !isEmpty(rests)) &&
-              <div className="flex-none p-4">
+              <div className="flex-none p-1 sm:p-4">
                 <div className="bg-slate-200 mb-2 rounded font-bold text-center">남는 보석</div>
                 <GemList gems={rests} />
               </div>}
