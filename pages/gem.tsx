@@ -40,7 +40,7 @@ function GemPage() {
         <div>
           보석 레벨 대신 다음과 같은 단어들도 사용 가능합니다.
           {Object.keys(presets).map(key => (
-            <div>
+            <div key={key}>
               <span className="font-bold">{key}:</span>{' '}
               { Object.keys(presets[key]).map(level => (
                 `${level}레벨 보석 ${presets[key][parseInt(level)]}개`
