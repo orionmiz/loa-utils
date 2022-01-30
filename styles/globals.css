@@ -9,7 +9,7 @@ html, body {
 
 @font-face {
   font-family: AppleSDGothicNeo;
-  src: url('/fonts/AppleSDGothicNeo/applesdgothicneom.ttf') format('truetype'),
+  src: url('/fonts/AppleSDGothicNeo/AppleSDGothicNeoM.ttf') format('truetype'),
     url('/fonts/AppleSDGothicNeo/applesdgothicneom.woff') format('woff'),
     url('/fonts/AppleSDGothicNeo/applesdgothicneom.woff2') format('woff2');
   font-weight: normal;
