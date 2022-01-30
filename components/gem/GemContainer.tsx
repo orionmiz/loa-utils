@@ -35,7 +35,7 @@ function GemContainer({ name, desc }: {
     <div className="container w-56">
       <div className="flex mb-1 items-center space-x-3">
         <span className="flex-none font-bold text-sky-700 text-xl">{desc} {' '}</span>
-        <span className="flex-none border rounded bg-gray-400 text-white font-bold cursor-pointer px-2 select-none" onClick={() => gem.clear(name)}>&#11119;</span>
+        <span className="flex-none border rounded bg-gray-400 text-white font-bold cursor-pointer px-2 select-none" onClick={() => gem.clear(name)}>↺</span>
       </div>
       <GemList gems={list} name={name} />
       <form onSubmit={onSubmit} name={name}>
