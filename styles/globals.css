@@ -15,3 +15,8 @@ html, body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: Segoe UI;
+  src: url('/fonts/SegoeUI/segoeui.woff') format('woff');
+}
