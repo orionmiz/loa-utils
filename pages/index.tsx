@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='m-4'>
         <p>
-          <Image src={mococon} /> <br />
+          <Image src={mococon} placeholder='blur' /> <br />
           기능 추가, 버그 제보 등 건의사항은 여기로 <br />
           <Link href='https://open.kakao.com/o/saoyENWd'>
             <a className='underline'>{'>'} 카카오톡 1:1 채팅</a>
