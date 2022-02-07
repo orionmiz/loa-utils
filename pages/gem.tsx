@@ -23,7 +23,7 @@ function GemPage() {
   return (
     <Layout>
       <Head>
-        <title>LoaUtils - 보석 계산</title>
+        <title>LoaUtils - 보석 제작</title>
       </Head>
       <div className="m-4">
         <div className="font-bold text-xl mb-1 text-sky-700">가이드</div>
