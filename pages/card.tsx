@@ -65,7 +65,7 @@ function CardPage() {
                     </div>
                     <div className="font-bold">
                       <span className="text-sky-500">각성 합계: </span>
-                      {card.totalAwakening} {' → '} {goal}
+                      {card.totalAwakening} {' → '} {Math.max(goal, card.totalAwakening)}
                     </div>
                     <div className="font-bold text-sky-500 mb-1">목표 각성까지 필요한 카드:</div>
                     <CardTable cardList={Object.keys(card.reqs)} propList={{
