@@ -37,6 +37,11 @@ export const presets: Record<string, Gem> = {
     4: 2,
     3: 1
   },
+  '회랑-헬': {
+    4: 2,
+    3: 2,
+    2: 2
+  },
   '점령': {
     3: 10
   }
@@ -87,7 +92,7 @@ export function parseGemString(str: string, preview: boolean = false) {
     }*/
 
     for (const preset in presets) {
-      if (cur.startsWith(preset)) {
+      if (cur.split('/')[0] === preset) {
         Object.keys(presets[preset]).forEach((key) => {
           const presetLevel = parseInt(key);
           prev[presetLevel] = (prev[presetLevel] ?? 0) + presets[preset][presetLevel] * amount;
@@ -276,18 +281,23 @@ export function calcReqWithRest(from: Gem, to: Gem): [Gem, Gem] {
   return [_to, rest];
 }
 
-export function calcBossRushReq(goal: Gem) {
-  const each = calcGemValue(presets['회랑'])
+function calcSpecialReq(goal: Gem, req: string) {
+  const each = calcGemValue(presets[req])
   const val = calcGemValue(goal);
 
   return Math.ceil(val / each);
 }
 
-export function calcWarReq(goal: Gem) {
-  const each = calcGemValue(presets['점령'])
-  const val = calcGemValue(goal);
+export function calcBossRushReq(goal: Gem) {
+  return calcSpecialReq(goal, '회랑');
+}
 
-  return Math.ceil(val / each);
+export function calcBossRushHellReq(goal: Gem) {
+  return calcSpecialReq(goal, '회랑-헬');
+}
+
+export function calcWarReq(goal: Gem) {
+  return calcSpecialReq(goal, '점령');
 }
 
 function getValue(level: number, count: number = 1) {

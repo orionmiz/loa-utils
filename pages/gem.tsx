@@ -5,7 +5,7 @@ import GemContainer from "../components/gem/GemContainer";
 import GemList from "../components/gem/GemList";
 import Layout from "../components/layout";
 import useGem from "../hooks/useGem";
-import { calcBossRushReq, calcWarReq, presets } from "../lib/gem";
+import { calcBossRushHellReq, calcBossRushReq, calcWarReq, presets } from "../lib/gem";
 import { GemLists } from "../lib/gem";
 import { isEmpty } from "../lib/util";
 
@@ -80,6 +80,7 @@ function GemPage() {
                 <div className="bg-slate-600 mb-2 rounded font-bold text-white text-center">필요 보석</div>
                 <GemList gems={needs} />
                 <div className="text-rose-400 font-bold">≈ 태양의 회랑 {calcBossRushReq(needs)}수</div>
+                <div className="text-rose-400 font-bold">≈ 태양의 회랑[헬] {calcBossRushHellReq(needs)}수</div>
                 <div className="text-rose-400 font-bold">≈ 점령전 {calcWarReq(needs)}회</div>
                 <br />
               </div>}
