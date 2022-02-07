@@ -67,7 +67,7 @@ export const CardDataCells = observer(({ prop }: {
 
   return (
     <>{Object.keys(data).map(name => (
-      <CardDataCell name={name} prop={prop} />))}
+      <CardDataCell name={name} prop={prop} key={name} />))}
     </>)
 });
 
