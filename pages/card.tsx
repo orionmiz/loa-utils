@@ -21,10 +21,9 @@ function CardPage() {
       <div className="m-4">
         <div className="font-bold text-xl mb-1 text-sky-700">가이드</div>
         <p>
-          맞추고자 하는 카드 세트와 목표 각성의 합계를 설정하세요. <br />
-          현재 보유중인 카드들의 각성 수치와 추가 개수를 입력하세요. <br />
+          1. 맞추고자 하는 카드 세트와 목표 각성의 합계를 설정하세요. <br />
+          2. 현재 보유중인 카드들의 각성 수치와 추가 개수를 입력하세요. <br />
           <span className="font-bold">※ 세트의 모든 카드가 등록되어 있다고 가정합니다.<br /></span>
-          <span className="font-bold sm:hidden">※ 획득처 목록은 큰 화면에서만 제공<br /></span>
         </p>
         <div className="space-x-2 py-2">
           <select value={set} onChange={e => {

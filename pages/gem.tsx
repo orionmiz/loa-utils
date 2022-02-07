@@ -27,15 +27,13 @@ function GemPage() {
       </Head>
       <div className="m-4">
         <div className="font-bold text-xl mb-1 text-sky-700">가이드</div>
-
         <p>
-          <ol className="list-decimal list-inside">
-            <li>보유 중인 보석과 목표 보석을 <span className="border rounded font-bold text-green-500 border-green-500 px-1">
-              레벨/개수
-            </span> 와 같은 형태로 입력합니다.</li>
-            <li>쉼표로 구분하여 여러 개의 보석을 한번에 입력 가능합니다.</li>
-            <li>Enter를 누르면 입력을 확정하여 리스트에 반영합니다.</li>
-          </ol>
+          1. 보유 중인 보석과 목표 보석을
+          <span className="border rounded font-bold text-green-500 border-green-500 px-1">
+            레벨/개수
+          </span> 와 같은 형태로 입력합니다. <br />
+          2. 쉼표로 구분하여 여러 개의 보석을 한번에 입력 가능합니다.<br />
+          3. Enter를 누르면 입력을 확정하여 리스트에 반영합니다.<br />
           ※ 레벨만 입력할 경우 개수는 1로 취급합니다.<br />
           ※ 레벨 뒤에 *를 붙일 경우 개수는 11로 취급합니다. (최대 장착 보석)<br />
         </p>
