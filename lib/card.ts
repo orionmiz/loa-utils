@@ -144,6 +144,7 @@ export default class Card {
     Object.keys(temp).forEach(key => {
       const info = temp[key];
 
+      // TODO: sqrt might bring better performance
       while (info.amount > info.awakening) {
         info.amount -= info.awakening + 1;
         info.awakening++;

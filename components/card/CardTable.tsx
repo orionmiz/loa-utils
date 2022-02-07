@@ -82,7 +82,10 @@ export const CardDataCell = observer(({ name, prop }: {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const val = parseInt(e.target.value);
+
+    const lastChar = e.target.value.slice(-1);
+
+    const val = parseInt(lastChar) || 0;
     if (val >= 0 && (prop === 'amount' || val <= 5)) {
       card.changeData(name, prop, val);
     }
@@ -92,6 +95,8 @@ export const CardDataCell = observer(({ name, prop }: {
     <input type='number'
       className="text-center text-lg w-full pl-2"
       value={data[name][prop]}
-      onChange={onChange}></input>
+      //onChange={onChange}
+      onInput={onChange}
+      min={0} max={prop === 'awakening' ? 5 : 999}></input>
   )
 });
