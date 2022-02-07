@@ -128,7 +128,6 @@ export default class Card {
       delete reqs[lowest];
     }
 
-
     // except drop only
     if (minSelect) {
       const copy = Card.copy(cards);
@@ -140,6 +139,17 @@ export default class Card {
 
       return this.reqsOf(copy, goal, set, false);
     }
+
+    // adjust awakening from exceeding amount
+    Object.keys(temp).forEach(key => {
+      const info = temp[key];
+
+      while (info.amount > info.awakening) {
+        info.amount -= info.awakening + 1;
+        info.awakening++;
+        goal--;
+      }
+    });
 
     while (goal > 0) {
       const minKey = Object.keys(temp).reduce((prev, cur) => {
