@@ -5,7 +5,11 @@ module.exports = {
     "./lib/**/*.{js,ts}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '~sm': { max: '639px' } // 640 - 1
+      },
+    },
   },
   plugins: [],
 }

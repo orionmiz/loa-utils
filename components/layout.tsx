@@ -14,8 +14,9 @@ export default function Layout({
           </a>
         </Link>
         {[
-          ['보석 계산', '/gem'],
-          ['카드 계산', '/card'],
+          ['보석 제작', '/gem'],
+          ['카드 각성', '/card'],
+          ['장비 제작', '/equip'],
         ].map(([title, url], idx) => (
           <Link href={url} key={idx}>
             <a className='px-4 hover:text-sky-700 hover:bg-gray-100 py-4'>{title}</a>
