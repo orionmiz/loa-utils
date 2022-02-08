@@ -145,10 +145,14 @@ export default class Card {
       const info = temp[key];
 
       // TODO: sqrt might bring better performance
-      while (info.amount > info.awakening) {
+      while (info.amount > info.awakening && info.awakening < 5) {
         info.amount -= info.awakening + 1;
         info.awakening++;
         goal--;
+
+        if (info.awakening === 5) {
+          info.amount = 0;
+        }
       }
     });
 
