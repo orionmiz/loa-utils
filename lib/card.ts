@@ -112,6 +112,18 @@ export default class Card {
 
   static reqsOf(cards: UserCardData, goal: number, set: string, minSelect: boolean): Record<string, number>[] {
 
+    // except drop only
+    if (minSelect) {
+      const copy = Card.copy(cards);
+      Object.keys(copy).forEach(key => {
+        if (cardSets[set].cards[key].dropOnly) {
+          delete copy[key];
+        }
+      });
+
+      return this.reqsOf(copy, goal, set, false);
+    }
+
     const maxCards = cardSets[set].maxCards;
     const reqs = Object.keys(cards).reduce((prev: Record<string, number>, cur) => {
       prev[cur] = 0;
@@ -126,18 +138,6 @@ export default class Card {
       });
       delete temp[lowest];
       delete reqs[lowest];
-    }
-
-    // except drop only
-    if (minSelect) {
-      const copy = Card.copy(cards);
-      Object.keys(copy).forEach(key => {
-        if (cardSets[set].cards[key].dropOnly) {
-          delete copy[key];
-        }
-      });
-
-      return this.reqsOf(copy, goal, set, false);
     }
 
     // adjust awakening from exceeding amount
