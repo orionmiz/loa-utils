@@ -149,10 +149,10 @@ export default class Card {
         info.amount -= info.awakening + 1;
         info.awakening++;
         goal--;
+      }
 
-        if (info.awakening === 5) {
-          info.amount = 0;
-        }
+      if (info.awakening === 5) {
+        info.amount = 0;
       }
     });
 
