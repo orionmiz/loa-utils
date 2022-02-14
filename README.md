@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LoaUtils
 
-## Getting Started
+**LoaUtils는 로스트아크 게임 플레이에 도움이 되는 유틸리티 계산기 프로젝트입니다.**
 
-First, run the development server:
+현재 [여기](https://loautils.vercel.app)에서 이용 가능합니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 지원 기능
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 보석 합성
+> 보유 중인 보석과 목표 보석 입력 시 **필요 보석**과 **남는 보석**을 계산
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 카드 계산
+> 카드 세트와 목표 각성, 보유 중인 카드 입력 시 목표 각성까지 도달 가능한 **최소 카드**를 계산
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 추가 예정 기능
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 장비 제작
+> 군단장 장비 제작 시 **필요한 재료** 수량 계산 (토벌 횟수와 더보기 보상 고려)
 
-## Learn More
+### 골드 계산
+> 레벨 별 배럭 수에 따른 **주간 골드 획득량** 계산
 
-To learn more about Next.js, take a look at the following resources:
+## 버그 발견 시
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+직접 [Issue](https://github.com/orionmiz/loa-utils/issues)를 생성하시거나 수정 PR을 넣어주세요.
