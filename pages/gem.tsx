@@ -28,7 +28,7 @@ function GemPage() {
       <div className="m-4">
         <div className="font-bold text-xl mb-1 text-sky-700">가이드</div>
         <p>
-          1. 보유 중인 보석과 목표 보석을
+          1. 보유 중인 보석과 목표 보석을 {''}
           <span className="border rounded font-bold text-green-500 border-green-500 px-1">
             레벨/개수
           </span> 와 같은 형태로 입력합니다. <br />
