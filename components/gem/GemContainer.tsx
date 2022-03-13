@@ -33,7 +33,7 @@ function GemContainer({ name, desc }: {
   }
 
   return (
-    <div className="container w-56">
+    <div className="container w-60">
       <div className="flex mb-1 items-center space-x-3">
         <span className="flex-none font-bold text-sky-700 text-xl">{desc} {' '}</span>
         <span className="flex-none border rounded bg-gray-400 text-white font-bold cursor-pointer px-1 select-none" onClick={() => gem.clear(name)}>
